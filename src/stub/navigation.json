@@ -1,0 +1,22 @@
+[
+    {
+        "title": "Home",
+        "link": "/"
+    },
+    {
+        "title": "Shop",
+        "link": "/shop"
+    },
+    {
+        "title": "Blog",
+        "link": "/blog"
+    },
+    {
+        "title": "contact",
+        "link": "/contact"
+    },
+    {
+        "title": "About us",
+        "link": "/about-us"
+    }
+]
