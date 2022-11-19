@@ -1,18 +1,23 @@
 import { useState } from "react";
-import { AppBar, Badge, Container, IconButton, Toolbar, List, ListItem, ListItemText, Drawer, Box, Typography } from "@mui/material";
-import logo from "src/assets/logo.webp";
-import navigation from "src/stub/navigation.json";
 import { NavLink } from "react-router-dom";
-import styles from "src/components/Header/styles";
+import { AppBar, Container, IconButton, Toolbar, List, ListItem, ListItemText, Drawer, Box, Typography } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
-import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
-import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
 import MenuIcon from "@mui/icons-material/Menu";
+import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
+
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
+
+import logo from "src/assets/logo.webp";
+
+import navigation from "src/stub/navigation.json";
+
+import CartNavigation from "src/components/CartNavigation";
+import styles from "src/components/Header/styles";
 const Header = () => {
   const [isOpenDrawer, setIsOpenDrawer] = useState(false);
+
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down("md"));
 
@@ -43,22 +48,18 @@ const Header = () => {
         </List>
 
         <List sx={styles.menuIcon}>
-          <ListItem sx={styles.icon}>
-            <SearchIcon fontSize="small" />
-          </ListItem>
-          <ListItem sx={styles.icon}>
-            <Badge badgeContent={4} sx={styles.badge}>
-              <ShoppingCartOutlinedIcon fontSize="small" />
-            </Badge>
-          </ListItem>
-          <ListItem sx={styles.icon}>
-            <PersonOutlineOutlinedIcon fontSize="small" />
-          </ListItem>
-          {matches && (
+        {matches && (
             <ListItem sx={styles.icon} onClick={handleToggleDrawer}>
               <MenuIcon fontSize="small" />
             </ListItem>
           )}
+          <ListItem sx={styles.icon}>
+            <SearchIcon fontSize="small" />
+          </ListItem>
+          <CartNavigation/>
+          <ListItem sx={styles.icon}>
+            <PersonOutlineOutlinedIcon fontSize="small" />
+          </ListItem>
         </List>
         <Drawer anchor="left" open={isOpenDrawer} onClose={handleToggleDrawer}>
           <Box sx={styles.leftMenu}>
