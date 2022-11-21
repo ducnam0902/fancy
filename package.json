@@ -10,6 +10,7 @@
     "@material-ui/system": "^4.12.2",
     "@mui/icons-material": "^5.10.9",
     "@mui/material": "^5.10.13",
+    "@mui/styles": "^5.10.14",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -75,6 +76,7 @@
     "eslint-plugin-react": "^7.31.10",
     "husky": "^8.0.2",
     "lint-staged": "^13.0.3",
-    "prettier": "^2.7.1"
+    "prettier": "^2.7.1",
+    "react-material-ui-carousel": "^2.3.10-mui5"
   }
 }
