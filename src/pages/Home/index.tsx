@@ -1,8 +1,10 @@
-import React from 'react'
+import Slide from "src/components/Slide"
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <>
+      <Slide/>
+    </>
   )
 }
 
