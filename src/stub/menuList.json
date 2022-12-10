@@ -1,0 +1,77 @@
+[
+    {
+        "title": "My account",
+        "menuList": [
+            {
+                "title": "Register",
+                "link": "/register"
+            },
+            {
+                "title": "My Account",
+                "link": "/account"
+            },
+            {
+                "title": "My Wishlist",
+                "link": "/wishlist"
+            },
+            {
+                "title": "My Cart",
+                "link": "/cart"
+            },
+            {
+                "title": "Checkout",
+                "link": "/checkout"
+            }
+        ]
+    },
+    {
+        "title": "Information",
+        "menuList": [
+            {
+                "title": "Sitemap",
+                "link": "/sitemap"
+            },
+            {
+                "title": "Privacy policy",
+                "link": "/privacy-policy"
+            },
+            {
+                "title": "Group Sales",
+                "link": "/group-sales"
+            },
+            {
+                "title": "Affiliates",
+                "link": "/affiliates"
+            },
+            {
+                "title": "Advanced Search",
+                "link": "/advanced-search"
+            }
+        ]
+    },
+    {
+        "title": "Information",
+        "menuList": [
+            {
+                "title": "Product Detail",
+                "link": "/product-detail"
+            },
+            {
+                "title": "Gift Voucher",
+                "link": "/gift-voucher"
+            },
+            {
+                "title": "Returns and Exchanges",
+                "link": "/return-exchange"
+            },
+            {
+                "title": "Shipping Options",
+                "link": "/shipping-options"
+            },
+            {
+                "title": "Help & Faqs",
+                "link": "/help-faqs"
+            }
+        ]
+    }
+]
