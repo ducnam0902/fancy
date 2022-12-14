@@ -18,8 +18,8 @@ const Footer = () => {
             Lorem Ipsum is simply dummy text of the printing and typesetting industry.
           </Typography>
           <Box sx={styles.contactOverview}>
-            {contactDetails.map((item) => (
-              <Box sx={styles.contactDetails}>
+            {contactDetails.map((item, key) => (
+              <Box sx={styles.contactDetails} key={key}>
                 <Box sx={styles.icon}>{item.icon}</Box>
                 <Box sx={styles.contactTitle}>
                   <Typography variant="h6" sx={styles.topTitle}>
