@@ -40,7 +40,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint src/*.tsx",
-    "postinstall": "husky install"
+    "postinstall": "husky install",
+    "coverage": "yarn test --coverage --watchAll=false"
   },
   "eslintConfig": {
     "extends": [
@@ -78,6 +79,16 @@
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
     "react-icons": "^4.7.1",
-    "react-material-ui-carousel": "^2.3.10-mui5"
+    "react-material-ui-carousel": "^2.3.10-mui5",
+    "ts-jest": "^29.0.3"
+  },
+  "jest":{
+    "collectCoverageFrom": [
+      "src/**/*.{tsx,jsx}",
+      "!**/src/index.tsx",
+      "!**/src/react-app-env.d.ts",
+      "!**/src/reportWebVitals.ts"
+    ]
   }
+
 }
