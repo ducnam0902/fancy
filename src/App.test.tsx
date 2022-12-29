@@ -6,6 +6,5 @@ test("renders learn react link", () => {
 });
 
 test("render Home Component", () => {
-  location.href='/shop';
   render(<App />);
 });

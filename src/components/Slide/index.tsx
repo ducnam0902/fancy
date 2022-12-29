@@ -2,7 +2,7 @@ import Carousel from "react-material-ui-carousel";
 import { Paper, Button, Typography, Box } from "@mui/material";
 import Image from "mui-image";
 
-import slides from "src/utils/slide";
+import slides from "src/utils/slides";
 import styles from "./styles";
 type NavButtonProps = {
   onClick: Function | MouseEvent;
