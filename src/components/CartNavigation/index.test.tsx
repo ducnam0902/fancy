@@ -8,7 +8,6 @@ describe('Should render Cart Navigation successfully', () =>{
     expect(screen.queryByText(/Check out/)).toBeNull();
     const listItem = screen.queryByRole('listitem');
     userEvent.click(screen.queryByRole('listitem') as Element);
-    screen.debug();
     expect(screen.queryByText(/Check out/)).toBeInTheDocument();
 
   });
