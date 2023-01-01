@@ -88,8 +88,6 @@
       "!**/src/index.tsx",
       "!**/src/react-app-env.d.ts",
       "!**/src/reportWebVitals.ts"
-    ],
-    "collectCoverage":true,
-    "testResultsProcessor": "jest-sonar-report"
+    ]
   }
 }
