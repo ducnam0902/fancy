@@ -4,5 +4,4 @@ module.exports = {
   testEnvironment: 'node',
   "verbose": true,
   "automock": true,
-
 };
