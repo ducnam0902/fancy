@@ -1,0 +1,47 @@
+pipeline {
+
+  agent any
+
+  tools {
+    nodejs "Nodejs"
+  }
+
+  stages {
+    stage('Clean the repository') {
+      steps {
+        dir('/var/jenkins_home/workspace/fancy') {
+          deleteDir()
+        }
+      }
+    }
+
+    stage('Clone git repository') {
+      steps {
+        git branch: 'main', url: 'https://github.com/ducnam0902/fancy'
+      }
+    }
+
+    stage('Initial the project') {
+      steps {
+        sh 'yarn'
+      }
+    }
+
+    stage('Test') {
+      steps {
+        sh 'yarn test --coverage'
+      }
+    }
+    
+    stage('SonarQube Analysis') {
+      steps {
+        script {
+          def scannerHome = tool name: 'sonarqube', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
+          withSonarQubeEnv('sonarqube') {
+            sh "${scannerHome}/bin/sonar-scanner -Dsonar.language=javascript -Dsonar.projectName=fancy -Dsonar.projectVersion=1.0 -Dsonar.projectKey=fancy:app -Dsonar.javascript.Icov.reportPaths=coverage/Icov.info "
+          }
+        }
+      }
+    }
+  }
+}
