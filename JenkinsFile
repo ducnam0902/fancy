@@ -7,7 +7,7 @@ pipeline {
   }
 
   stages {
-    stage('Clean the repository') {
+    stage('Clean WS') {
       steps {
         dir('/var/jenkins_home/workspace/fancy') {
           deleteDir()
@@ -15,7 +15,7 @@ pipeline {
       }
     }
 
-    stage('Clone git repository') {
+    stage('Clone source code') {
       steps {
         git branch: 'main', url: 'https://github.com/ducnam0902/fancy'
       }
@@ -40,6 +40,14 @@ pipeline {
           withSonarQubeEnv('sonarqube') {
             sh "${scannerHome}/bin/sonar-scanner -Dsonar.language=javascript -Dsonar.projectName=fancy -Dsonar.projectVersion=1.0 -Dsonar.projectKey=fancy:app -Dsonar.javascript.Icov.reportPaths=coverage/Icov.info "
           }
+        }
+      }
+    }
+
+    stage('NPM Build') {
+      steps {
+        script {
+          sh `yarn build`
         }
       }
     }
