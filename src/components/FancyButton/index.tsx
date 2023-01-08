@@ -4,12 +4,13 @@ import { SystemStyleObject } from '@mui/system'
 import styles from './styles'
 type FancyButtonProps = {
   children: string,
-  style?: SystemStyleObject<Theme>,
+  styleButton?: SystemStyleObject<Theme>
 }
+type button = FancyButtonProps & React.ComponentPropsWithoutRef<typeof Button>;
 
-const FancyButton = ({ children,style, ...restProps}:FancyButtonProps) => {
+const FancyButton = ({ children,styleButton, ...restProps}:button) => {
   return (
-    <Button fullWidth variant='contained' sx={[styles.button, style as SystemStyleObject<Theme>  ]} {...restProps}>{children}</Button>
+    <Button fullWidth variant='contained' sx={[styles.button, styleButton as SystemStyleObject<Theme> ]} {...restProps}>{children}</Button>
   )
 }
 

@@ -5,16 +5,12 @@ import Image from "mui-image";
 import slides from "src/utils/slides";
 import styles from "./styles";
 import { useState } from "react";
-type NavButtonProps = {
-  onClick: Function | MouseEvent;
-  next: boolean;
-  prev: boolean;
-};
+import { v4 as uuidv4 } from 'uuid';
 const Slide = () => {
-  const [isShowFade, setIsShowFade] = useState(crypto.randomUUID());
+  const [isShowFade, setIsShowFade] = useState(uuidv4());
 
-  const handleShowFadeImage = (now, previous) => {
-    setIsShowFade(crypto.randomUUID());
+  const handleShowFadeImage = () => {
+    setIsShowFade(uuidv4());
 
   }
   return (
@@ -32,13 +28,14 @@ const Slide = () => {
       activeIndicatorIconButtonProps={{ style: styles.activeIndicator }}
       animation={undefined}
       swipe={false}
+      changeOnFirstRender={true}
       onChange={handleShowFadeImage}
     >
       {slides.map((item, index) => (
         <Paper key={index} sx={styles.paper}>
           <Image src={item.image} />
           <Box sx={styles.textOverview}>
-            <Fade left spy={isShowFade}>
+            <Fade right spy={isShowFade}>
               <Typography variant="h2" sx={styles.name}>
                 {item.name}
               </Typography>
@@ -49,7 +46,7 @@ const Slide = () => {
                 {item.description}
               </Typography>
             </Fade>
-            <Fade left delay={1000} spy={isShowFade} >
+            <Fade bottom delay={1000} spy={isShowFade} >
               <>
               {index !== slides.length - 1 && <Button sx={[styles.button, styles.shopNow]}>Shop now</Button>}
               <Button sx={styles.button}>Show more</Button>
