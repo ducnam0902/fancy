@@ -14,6 +14,7 @@ const styles = {
     },
   },
   cart: {
+    zIndex: 1000,
     position: 'absolute',
     top: '59px',
     right: 0,

@@ -18,19 +18,19 @@ const BannerFashion = () => {
             <Typography variant="h3" sx={styles.menFashion}>
               Men's Fashion
             </Typography>
-            <FancyButton style={styles.shop}>Shop Now</FancyButton>
+            <FancyButton styleButton={styles.shop}>Shop Now</FancyButton>
           </Box>
         </Grid>
         <Grid item xs={12} lg={6}>
           <Box sx={styles.boxContainer}>
             <Image src={banner2} wrapperStyle={styles.accessories} style={styles.image} />
             <Typography variant="h3" sx={styles.menFashion}>Accessories</Typography>
-            <FancyButton style={styles.shopJewelry}>Shop Now</FancyButton>
+            <FancyButton styleButton={styles.shopJewelry}>Shop Now</FancyButton>
           </Box>
           <Box sx={styles.boxContainer}>
             <Image src={banner3} wrapperStyle={styles.imageWrapper} style={styles.image} />
             <Typography variant="h3" sx={styles.womenFashion}>Women's Fashion</Typography>
-            <FancyButton style={styles.shopWomen}>Shop Now</FancyButton>
+            <FancyButton styleButton={styles.shopWomen}>Shop Now</FancyButton>
           </Box>
         </Grid>
       </Grid>

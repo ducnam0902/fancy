@@ -39,6 +39,7 @@ const Header = () => {
               <ListItemText
                 sx={{
                   ...{ width: index === navigation.length - 1 ? "90px" : "60px" },
+                  fontFamily: "Lato"
                 }}
               >
                 {item.title}

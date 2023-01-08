@@ -3,6 +3,8 @@ const styles = {
     padding: "25px 0",
     display: "flex",
     justifyContent: "space-between",
+    alignItems: "center",
+    height: "98px",
   },
   menuListNavigation: {
     display: {
